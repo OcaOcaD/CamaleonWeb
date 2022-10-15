@@ -1,0 +1,170 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5rem;
+}
+.navbar .brand {
+  display: flex;
+  font-weight: 900;
+}
+.navbar .brand label {
+  font-size: 36px;
+}
+.navbar .brand img {
+  margin-left: -2rem;
+}
+.navbar .navbar-content {
+  display: flex;
+  align-items: center;
+}
+
+.button-group-horizontal {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-camaleon-primary {
+  cursor: pointer;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  min-width: 180px;
+  background-color: #00a35c;
+  color: white;
+  border: 1px solid white;
+  transition: all 0.3s ease-in-out;
+}
+.btn-camaleon-primary:hover {
+  background-color: white;
+  color: #00a35c;
+  border: 1px solid #00a35c;
+  transform: scale(1.05);
+}
+
+.btn-camaleon-secondary {
+  cursor: pointer;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  min-width: 180px;
+  background-color: white;
+  color: #00a35c;
+  border: 1px solid #00a35c;
+  transition: all 0.3s ease-in-out;
+}
+.btn-camaleon-secondary:hover {
+  background-color: #00a35c;
+  color: white;
+  border: 1px solid white;
+  transform: scale(1.05);
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rem 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 100%;
+  max-width: 30%;
+  box-shadow: 0 4px 4px #858585;
+  height: 180px;
+  background-color: white;
+  padding: 2rem;
+  font-size: 24px;
+  font-weight: 900;
+  justify-content: space-between;
+}
+.card .card-icon {
+  align-self: flex-end;
+}
+.card .content {
+  font-size: inherit;
+  display: flex;
+  flex-direction: column;
+}
+.card .content p {
+  font-size: inherit;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  background: linear-gradient(180deg, rgb(255, 255, 255) 48%, rgb(1, 163, 92) 100%);
+  min-height: calc(80vh - 75px);
+}
+.landing .landing-text {
+  max-width: 45%;
+  font-size: 24px;
+  padding: 0rem 0 5rem 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  background-color: #01A35C;
+  padding: 5rem;
+}
+.footer .footer-camaleon {
+  position: absolute;
+  right: 25%;
+  max-height: 130%;
+  transform: translateY(-25%);
+  z-index: 1;
+}
+.footer .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.footer h1 {
+  font-weight: 900;
+  font-size: 36px;
+}
+.footer button {
+  width: 240px;
+}
+
+* {
+  font-family: "Assistant", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+.camaleon {
+  padding: 0;
+}
+
+.map-container {
+  height: 400px;
+}
+
+.sidebar {
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  font-family: monospace;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  border-radius: 4px;
+}
+
+/*# sourceMappingURL=styles.css.map */

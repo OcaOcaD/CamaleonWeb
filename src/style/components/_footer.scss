@@ -1,0 +1,30 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    background-color: #01A35C;
+    padding: 5rem;
+    .footer-camaleon{
+        position: absolute;
+        right: 25%;
+        max-height: 130%;
+        transform: translateY(-25%);
+        z-index: 1;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+    h1{
+        font-weight: 900;
+        font-size: 36px;
+    }
+    button{
+        width: 240px;
+    }
+}

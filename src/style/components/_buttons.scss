@@ -1,0 +1,42 @@
+.button-group-horizontal{
+    display: flex;
+    justify-content: flex-start;
+}
+.btn-camaleon-primary{
+    cursor: pointer;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    min-width: 180px;
+    background-color: #00a35c;
+    color: white;
+    border: 1px solid white;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        background-color: white;
+        color: #00a35c;
+        border: 1px solid #00a35c;
+        transform: scale(1.05);
+    }
+}
+.btn-camaleon-secondary{
+    cursor: pointer;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    min-width: 180px;
+    background-color: white;
+    color: #00a35c;
+    border: 1px solid #00a35c;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        background-color: #00a35c;
+        color: white;
+        border: 1px solid white;
+        transform: scale(1.05);
+    }
+}

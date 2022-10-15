@@ -1,0 +1,31 @@
+.cards-wrapper{
+    display: flex;
+    // width: 100%;
+    justify-content: space-between;
+    padding: 10rem 0 ;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 100%;
+    max-width: 30%;
+    box-shadow: 0 4px 4px #858585;
+    height: 180px;
+    background-color: white;
+    padding: 2rem;
+    font-size: 24px;
+    font-weight: 900;
+    justify-content: space-between;
+    .card-icon{
+        align-self: flex-end;
+    }
+    .content{
+        font-size: inherit;
+        p{
+            font-size: inherit;
+        }
+        display: flex;
+        flex-direction: column;
+    }
+}
