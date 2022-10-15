@@ -94,21 +94,6 @@ function Camaleon() {
     }, [userCams]);
     useEffect(() => {
         console.log("STREAM IS", stream);
-
-        if (Hls.isSupported()) {
-            var video = document.getElementById('video');
-            var hls = new Hls();
-            // bind them together
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MEDIA_ATTACHED, function () {
-              console.log("video and hls.js are now bound together !");
-              hls.loadSource("http://127.0.0.1:8000/stream/stream0.m3u8");
-              hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
-              });
-            });
-        }
-
-
     }, [stream]);
     return (
         <>
