@@ -28,3 +28,8 @@
     margin: 12px;
     border-radius: 4px;
     }
+
+.bgc-dark {
+    --bs-bg-opacity: 1;
+    background-color: #1d1d1b !important;
+}
