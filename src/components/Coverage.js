@@ -8,7 +8,7 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import data from "./data.geojson"
+import data from "../data.json"
 
 function Coverage() {
 
@@ -135,6 +135,9 @@ function Coverage() {
             map.current.on('click', 'unclustered-point', (e) => {
                 const coordinates = e.features[0].geometry.coordinates.slice();
                 const user = e.features[0].properties.user;
+                const id = e.features[0].properties.id;
+                const user_id = e.features[0].properties.user_id;
+                const cam_title = e.features[0].properties.title
                 // const tsunami =
                 // e.features[0].properties.tsunami === 1 ? 'yes' : 'no';
                 
@@ -142,13 +145,17 @@ function Coverage() {
                 // multiple copies of the feature are visible, the
                 // popup appears over the copy being pointed to.
                 while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
                 }
                 
                 new mapboxgl.Popup()
                 .setLngLat(coordinates)
                 .setHTML(
-                    `Ver camara: ${user}`
+                    `
+                    <a href="./camaleon/${id}" target="_blank">
+                      Ver camara: ${user} / ${cam_title}
+                    </a>
+                    `
                 )
                 .addTo(map.current);
             });
@@ -163,19 +170,19 @@ function Coverage() {
     });
 
     return (
-        <>
-        
-        <div className="camaleon">
+        <div className=''>
             <Navbar />
-            <h1 className=''>Coverage map</h1>
-            <p>Click on the camara you want to see</p>
-            <div>
-                <div ref={mapContainer} className="map-container" />
+            <br />
+            <div className="camaleon container">
+                <h1 className='view-title'>Coverage map</h1>
+                <p>Click on the camara you want to see</p>
+                {/* <div> */}
+                    <div ref={mapContainer} className="map-container" />
+                {/* </div> */}
             </div>
-        </div>
-        <Footer />
      
-        </>
+            <Footer />
+        </div>
     );
     
 }

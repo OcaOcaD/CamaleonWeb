@@ -1,20 +1,25 @@
-.navbar{
-    // width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 5rem;
-    .brand{
-        display: flex;
-        font-weight: 900;
-        label{
-            font-size: 36px;
-        }
-        img{
-            margin-left: -2rem;
-        }
-    }
-    .navbar-content{
-        display: flex;
-        align-items: center;
-    }
+// .navbar{
+//     // width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 0 5rem;
+//     .brand{
+//         display: flex;
+//         font-weight: 900;
+//         label{
+//             font-size: 36px;
+//         }
+//         img{
+//             margin-left: -2rem;
+//         }
+//     }
+//     .navbar-content{
+//         display: flex;
+//         align-items: center;
+//     }
+// }
+
+.navbar-component{
+    // color: white;
+    // border: 1px solid red;
 }

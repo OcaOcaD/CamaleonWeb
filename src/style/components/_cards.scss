@@ -1,15 +1,18 @@
 .cards-wrapper{
     display: flex;
     // width: 100%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 10rem 0 ;
+    flex-wrap: wrap;
+    gap: 1em;
 }
 .card{
     display: flex;
     flex-direction: column;
-    width: 400px;
+    flex-basis: 400px;
+    min-width: 230px;
     height: 100%;
-    max-width: 30%;
+    max-width: 80%;
     box-shadow: 0 4px 4px #858585;
     height: 180px;
     background-color: white;
@@ -17,6 +20,7 @@
     font-size: 24px;
     font-weight: 900;
     justify-content: space-between;
+    
     .card-icon{
         align-self: flex-end;
     }

@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+.mapZoom {
+	background-color: #1d1d1b;
+}
+.liElement::before {
+	content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+	color: black; /* Change the color */
+	font-weight: bold; /* If you want it to be bold */
+	display: inline-block; /* Needed to add space between the bullet and the text */
+	width: 0.8em; /* Also needed for space (tweak if needed) */
+	margin-left: -0.9em; /* Also needed for space (tweak if needed) */
+}
+
+.liElement::before :first {
+	content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+	color: #1d5a47; /* Change the color */
+	font-weight: bold; /* If you want it to be bold */
+	display: inline-block; /* Needed to add space between the bullet and the text */
+	width: 0.8em; /* Also needed for space (tweak if needed) */
+	margin-left: -0.9em; /* Also needed for space (tweak if needed) */
+}

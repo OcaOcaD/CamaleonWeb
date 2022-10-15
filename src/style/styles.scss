@@ -4,17 +4,40 @@
 @import "./components/landing";
 @import "./components/footer";
 *{
-    font-family: 'Assistant', sans-serif;
+    font-family: 'Assistant', sans-serif !important;
     margin: 0;
     padding: 0;
     font-size: 16px;
 }
+$green: #01A35C;
+
+.dark-view{
+    background-color: #1d1d1b;
+}
+.view-title{
+    font-size: 18px;
+    font-weight: bold;
+    color: $green;
+}
+
 .camaleon{
     padding: 0;
+    color: black;
+    h1{
+        
+    }
+}
+
+.cam-header{
+    font-size: 20px;
+    font-weight: 900;
 }
 
 .map-container {
-    height: 400px;
+    max-height: calc( 100vh - 130px);
+    height: 669px;
+    margin-bottom: 5em;
+    border: 1px solid white;
 }
 .sidebar {
     background-color: rgba(35, 55, 75, 0.9);

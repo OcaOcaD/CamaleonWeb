@@ -1,4 +1,4 @@
-import Logo from "../images/logo.svg"
+import Logo from "../images/logo-camaleon-w.png"
 
 
 import Button from 'react-bootstrap/Button';
@@ -12,10 +12,10 @@ import { Link } from 'react-router-dom';
 function NavScrollExample() {
   return (
 
-    <Navbar bg="light" expand="lg">
+    <Navbar className="navbar-component container" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">
-        <img id="camaleon-logo" style={{height: "75px"}}src={Logo} alt="Camaleón" />CAMA
+        <Navbar.Brand href="./">
+        <img id="camaleon-logo" style={{height: "75px"}}src={Logo} alt="Camaleón" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -25,7 +25,7 @@ function NavScrollExample() {
             navbarScroll
           >
             
-            <Nav.Link href="#action2">Sign in</Nav.Link>
+            <Nav.Link href="#action2">Registrate</Nav.Link>
             {/* <NavDropdown title="Sign in" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
