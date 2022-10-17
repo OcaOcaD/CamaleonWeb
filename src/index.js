@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from "./components/Home";
 import Coverage from "./components/Coverage";
+import Upload from "./components/Upload";
 
 
 import "./style/styles.css";
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
     element: <Camaleon />,
     errorElement: <ErrorPage></ErrorPage>
   },
+  {
+    path: "upload",
+    element: <Upload />,
+    errorElement: <ErrorPage></ErrorPage>
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(

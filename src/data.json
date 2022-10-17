@@ -13,7 +13,6 @@
             "user_id": "123454",
             "time": 1507425289659,
             "title": "Calle"
-        }, "geometry": { "type": "Point", "coordinates": [ -103.31064540039706, 20.692515203843755 ] } }
+        }, "geometry": {"type": "Point", "coordinates": [ -103.31064540039706, 20.692515203843755 ] } }
     ]
-    
 }

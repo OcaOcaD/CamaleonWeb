@@ -171,7 +171,7 @@ function Camaleon() {
                             <Row className="pt-5">
                             <ReactHlsPlayer
                                 src={stream}
-                                autoPlay={false}
+                                autoPlay={true}
                                 controls={true}
                                 width="100%"
                                 height="auto"
