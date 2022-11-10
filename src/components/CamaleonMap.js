@@ -135,6 +135,7 @@ function CamaleonMap({data}) {
                 const id = e.features[0].properties.id;
                 const user_id = e.features[0].properties.user_id;
                 const cam_title = e.features[0].properties.title
+                const host = e.features[0].properties.host
                 // const tsunami =
                 // e.features[0].properties.tsunami === 1 ? 'yes' : 'no';
                 
@@ -149,8 +150,10 @@ function CamaleonMap({data}) {
                 .setLngLat(coordinates)
                 .setHTML(
                     `
-                    <a href="./camaleon/${id}" target="_blank">
+                    <a href="http://${host}:3000/camaleon/${id}">
                       Ver camara: ${user} / ${cam_title}
+                      <br/>
+                      Host: ${host}
                     </a>
                     `
                 )

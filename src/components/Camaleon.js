@@ -25,7 +25,7 @@ function Camaleon() {
         /// Pedir el link
         axios({
             method: "get",
-            url: "http://172.22.117.18:8080/cameras",
+            url: "http://localhost:8080/cameras",
            
         })
             .then(function (response) {
@@ -68,6 +68,7 @@ function Camaleon() {
     };
     const getUserIdByCam = (camId) => {
         for (const f of data.features) {
+            console.log("The f properties:", f.properties)
             if (f.properties.id === camId) {
                 // console.log("sí")
                 setCam(f)
@@ -166,7 +167,7 @@ function Camaleon() {
                                 </Col>
                             </Row>
                             <Row className="justify-content-md-start pt-5">
-                                <Col lg={2}>TITULO</Col>
+                                <Col lg={2}>TITULO {JSON.stringify( cam ) } </Col>
                                 <Col lg={2}>(Uruapan 69, Mexican, Loki)</Col>
                             </Row>
                             <Row className="pt-5">
