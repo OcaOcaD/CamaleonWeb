@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import Navbar from "./Navbar";
 
 const Upload = ({ icon, unit, quantity, color }) => {
     const [selectedFile, setSelectedFile] = useState();
@@ -15,7 +16,7 @@ const Upload = ({ icon, unit, quantity, color }) => {
 		formData.append('File', selectedFile);
 
 		fetch(
-			'https://freeimage.host/api/1/upload?key=<YOUR_API_KEY>',
+			'https://localhost:8080/upload',
 			{
 				method: 'POST',
 				body: formData,
@@ -31,23 +32,28 @@ const Upload = ({ icon, unit, quantity, color }) => {
 	};
 
     return (
-        <div>
-            <input type="file" name="file" onChange={changeHandler} />
-            {isSelected ? (
+        <div className=''>
+            <Navbar />
+            <br />
+            <br />
+            <div className="container">
+                <input type="file" name="file" onChange={changeHandler} />
+                {isSelected ? (
+                    <div>
+                        <p>Filename: {selectedFile.name}</p>
+                        <p>Filetype: {selectedFile.type}</p>
+                        <p>Size in bytes: {selectedFile.size}</p>
+                        <p>
+                            lastModifiedDate:{" "}
+                            {selectedFile.lastModifiedDate.toLocaleDateString()}
+                        </p>
+                    </div>
+                ) : (
+                    <p>Select a photo to look for the person</p>
+                )}
                 <div>
-                    <p>Filename: {selectedFile.name}</p>
-                    <p>Filetype: {selectedFile.type}</p>
-                    <p>Size in bytes: {selectedFile.size}</p>
-                    <p>
-                        lastModifiedDate:{" "}
-                        {selectedFile.lastModifiedDate.toLocaleDateString()}
-                    </p>
+                    <button onClick={handleSubmission}>Submit</button>
                 </div>
-            ) : (
-                <p>Select a file to show details</p>
-            )}
-            <div>
-                <button onClick={handleSubmission}>Submit</button>
             </div>
         </div>
     );

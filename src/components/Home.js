@@ -17,14 +17,19 @@ function Home() {
                 </p>
                 <p>See our github repos to get started</p>
                 <div className="button-group-horizontal">
-                    <button className="btn-camaleon-primary">
-                        {" "}
-                        Camaleon Server <img width="30" height="30" src={Github} alt="" />{" "}
-                    </button>
-                    <button className="btn-camaleon-secondary">
+                    <a style={{textDecoration: "none"}} href="https://github.com/OcaOcaD/xerver-camaleon">
+
+                        <button className="btn-camaleon-primary" >
+                            {" "}
+                            Camaleon Server <img width="30" height="30" src={Github} alt="" />{" "}
+                        </button>
+                    </a>
+                    <a style={{textDecoration: "none"}} href="https://github.com/OcaOcaD/CamaleonWeb">
+                    <button className="btn-camaleon-secondary" >
                         {" "}
                         Explore cameras <img width="30" height="30" src={Github} alt="" />{" "} 
                     </button>
+                    </a>
                 </div>
                 <div className="cards-wrapper">
                     <Card

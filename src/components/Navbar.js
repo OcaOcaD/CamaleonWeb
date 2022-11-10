@@ -25,7 +25,7 @@ function NavScrollExample() {
             navbarScroll
           >
             
-            <Nav.Link href="#action2">Registrate</Nav.Link>
+            <Nav.Link href="/upload">Upload</Nav.Link>
             {/* <NavDropdown title="Sign in" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -40,7 +40,7 @@ function NavScrollExample() {
               Coverage map
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
+          {/* <Form className="d-flex">
             <Form.Control
               type="search"
               placeholder="Search"
@@ -48,7 +48,7 @@ function NavScrollExample() {
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
-          </Form>
+          </Form> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
