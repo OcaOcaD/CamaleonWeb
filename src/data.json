@@ -1,13 +1,20 @@
 {
     "type": "FeatureCollection",
     "features":[
-        { "type": "Feature", "properties": {
-            "id": "ak16994521",
-            "user": "Adrian Dávalos",
-            "user_id": "576987",
-            "time": 1507425650893,
-            "title": "Habitación"
-        }, "geometry": { "type": "Point", "coordinates": [ -103.31051665436385, 20.6922341754015 ] } },
+        { 
+            "type": "Feature",
+            "properties": {
+                "id": "ak16994521",
+                "user": "Adrian Dávalos",
+                "user_id": "576987",
+                "time": 1507425650893,
+                "title": "Habitación"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [ -103.31051665436385, 20.6922341754015 ] 
+            }
+        },
         { "type": "Feature", "properties": {
             "id": "ak16994519", "user": "José Sevilla",
             "user_id": "123454",

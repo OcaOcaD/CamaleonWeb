@@ -10,6 +10,7 @@ import { Link, useParams } from "react-router-dom";
 import ReactHlsPlayer from 'react-hls-player';
 
 import data from "../data.json";
+
 function Camaleon() {
     const [userCams, setUserCams] = useState([]);
     const [user, setUser] = useState(false);
@@ -17,13 +18,14 @@ function Camaleon() {
 
     let { camId } = useParams();
     const [stream, setStream] = useState(false)
+    
 
     useEffect(() => {
         console.log("USING EFFECT");
         /// Pedir el link
         axios({
             method: "get",
-            url: "http://25.6.200.193:8080/cameras",
+            url: "http://172.22.117.18:8080/cameras",
            
         })
             .then(function (response) {
@@ -33,10 +35,9 @@ function Camaleon() {
             .catch(function (error) {
                 console.log(error);
             });
-
-        
-        
     }, []);
+
+
 
     const filterByUser = () => {
 
