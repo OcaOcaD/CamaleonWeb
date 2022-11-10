@@ -36,6 +36,7 @@ function NavScrollExample() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown> */}
+            <Nav.Link href="/found">Found</Nav.Link>
             <Nav.Link href="/coverage">
               Coverage map
             </Nav.Link>

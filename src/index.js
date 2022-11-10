@@ -15,6 +15,7 @@ import "./style/styles.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ErrorPage from "./error-page";
 import Camaleon from "./components/Camaleon";
+import Found from "./components/Found";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
   {
     path: "upload",
     element: <Upload />,
+    errorElement: <ErrorPage></ErrorPage>
+  },
+  {
+    path: "found",
+    element: <Found />,
     errorElement: <ErrorPage></ErrorPage>
   }
 ]);

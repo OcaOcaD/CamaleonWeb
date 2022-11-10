@@ -13,19 +13,21 @@ const Upload = ({ icon, unit, quantity, color }) => {
     const handleSubmission = () => {
 		const formData = new FormData();
 
-		formData.append('File', selectedFile);
-
+		formData.append('file', selectedFile);
+        console.log("Sending... ->", selectedFile)
+        console.log("formData... ->", formData)
+        const url = window.location.protocol + "//" + window.location.hostname+":8080/upload"
 		fetch(
-			'https://localhost:8080/upload',
+			url,
 			{
 				method: 'POST',
 				body: formData,
 			}
 		)
-			.then((response) => response.json())
-			.then((result) => {
-				console.log('Success:', result);
-			})
+			.then((response) => {
+                console.log("IMAGE RESPONSE:", response)
+            })
+			
 			.catch((error) => {
 				console.error('Error:', error);
 			});
