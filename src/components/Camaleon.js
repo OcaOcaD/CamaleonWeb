@@ -9,7 +9,7 @@ import axios from "axios"
 import { Link, useParams } from "react-router-dom";
 import ReactHlsPlayer from 'react-hls-player';
 
-import data from "../data.json";
+// import data from "../data.json";
 
 function Camaleon() {
     const [userCams, setUserCams] = useState([]);
@@ -19,6 +19,56 @@ function Camaleon() {
     let { camId } = useParams();
     const [stream, setStream] = useState(false)
     
+    const [address, setAddress] = useState(false)
+    useEffect(()=>{
+        if( cam && cam != false ){
+
+            const cam_lon = cam.geometry.coordinates[0]
+            const cam_lat = cam.geometry.coordinates[1]
+            console.log("LaT:", cam_lat)
+            console.log("Long:", cam_lon)
+            axios({
+                method: "get",
+                url: `https://api.geoapify.com/v1/geocode/reverse?lat=${cam_lat}&lon=${cam_lon}&apiKey=ccc1a9ed9248407dbd15f003db303765`, 
+            })
+                .then(response => {
+                    console.log("ADDRESS RESULLT: ",response)
+                    const aux_address = response.data.features[0].properties.address_line1 + ", " + response.data.features[0].properties.address_line2
+                    console.log("THe final address:", aux_address)
+                    setAddress(aux_address)
+                })
+                
+                .catch(error => console.log('error', error));
+        }
+    },[cam])
+
+    // // Getting the json data START
+    const [data, setData] = useState(false)
+
+    useEffect(() => {
+        console.log("GETTING JSON DATA");
+        /// Pedir el link
+        const url = window.location.protocol + "//" + window.location.hostname+":8080/location-all"
+        
+        axios({
+            method: "get",
+            url:  url,
+        })
+            .then(function (response) {
+                console.log("this onw is for the champion", response);
+                setData( response.data )
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }, []);
+    useEffect(() => {
+        console.log("HOLA THIS IS THE DATA TA:", data)
+        // console.log("HOLO THIS IS THE dota TA:", dota)
+        
+    },[data])
+    // Getting the json data END
+
 
     useEffect(() => {
         console.log("USING EFFECT");
@@ -69,17 +119,19 @@ function Camaleon() {
         // setUser(features[0].properties.user);
     };
     const getUserIdByCam = (camId) => {
-        for (const f of data.features) {
-            console.log("The f properties:", f.properties)
-            if (f.properties.id === camId) {
-                // console.log("sí")
-                setCam(f)
-                setUser({
-                    "user_id": f.properties.user_id,
-                    "user_name": f.properties.user
-                })
-            }else{
-                console.log("NO")
+        if( data && data != false ){
+            for (const f of data.features) {
+                console.log("The f properties:", f.properties)
+                if (f.properties.id === camId) {
+                    // console.log("sí")
+                    setCam(f)
+                    setUser({
+                        "user_id": f.properties.user_id,
+                        "user_name": f.properties.user
+                    })
+                }else{
+                    console.log("NO")
+                }
             }
         }
     }
@@ -88,7 +140,7 @@ function Camaleon() {
         console.log("PARAMS", camId);
         getUserIdByCam(camId)
         // filterByUser();
-    }, []);
+    }, [data]);
     useEffect(() => {
         console.log("User changed");
         filterByUser()
@@ -140,9 +192,9 @@ function Camaleon() {
                                                     </td>
                                                     <td>
                                                         {" "}
-                                                        <Link to={`./${cam.properties.user_id}`}>
+                                                        <a href={`http://${cam.properties.host}:3000/camaleon/${cam.properties.id}`}>
                                                             Take a look
-                                                        </Link>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             ))}
@@ -169,8 +221,15 @@ function Camaleon() {
                                 </Col>
                             </Row>
                             <Row className="justify-content-md-start pt-5">
-                                <Col lg={2}>TITULO {JSON.stringify( cam ) } </Col>
-                                <Col lg={2}>(Uruapan 69, Mexican, Loki)</Col>
+                                {
+                                (cam && cam != false)?
+                                <>
+                                <Col lg={2}>{cam.properties.title } </Col>
+                                <Col lg={2}> {address} </Col>
+                                </>
+                                :
+                                <p>Cargando...</p>
+                                }
                             </Row>
                             <Row className="pt-5">
                             <ReactHlsPlayer
