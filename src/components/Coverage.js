@@ -26,9 +26,11 @@ function Coverage() {
     useEffect(() => {
         console.log("GETTING JSON DATA");
         /// Pedir el link
+        const url = window.location.protocol + "//" + window.location.hostname+":8080/location-all"
+        
         axios({
             method: "get",
-            url: "http://localhost:8080/location-all",
+            url:  url,
         })
             .then(function (response) {
                 console.log("this onw is for the champion", response);

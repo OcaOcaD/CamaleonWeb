@@ -23,9 +23,11 @@ function Camaleon() {
     useEffect(() => {
         console.log("USING EFFECT");
         /// Pedir el link
+        const url = window.location.protocol + "//" + window.location.hostname+":8080/cameras"
+        console.log("URL:", url)
         axios({
             method: "get",
-            url: "http://localhost:8080/cameras",
+            url: url,
            
         })
             .then(function (response) {
