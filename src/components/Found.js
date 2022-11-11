@@ -8,9 +8,7 @@ const Found = () => {
     const [records, setRecords] = useState(false);
     const [addresses, setAddresses] = useState(false);
     useEffect(()=>{
-
-        let array_addresses = []
-        if( records && records != false ){
+        if ( records && records != false ){
             for (const r of records) {
                 
                 axios({
@@ -18,19 +16,13 @@ const Found = () => {
                     url: `https://api.geoapify.com/v1/geocode/reverse?lat=${r[2]}&lon=${r[1]}&apiKey=ccc1a9ed9248407dbd15f003db303765`, 
                 })
                     .then(response => {
-                        console.log("ADDRESS RESULLT: ",response)
                         const aux_address = response.data.features[0].properties.address_line1 + ", " + response.data.features[0].properties.address_line2
-                        console.log("The final address:", aux_address)
-                        array_addresses.push(aux_address)
-                        console.log("ARRRRRRAY", array_addresses)
-                        setAddresses(array_addresses)
+                        setAddresses([...addresses, aux_address])
+                        
                     })
                     .catch(error => console.log('error', error));
     
             }
-            //
-            
-
         }
 
             
@@ -86,7 +78,7 @@ const Found = () => {
                         {
                             (records && records != false )?
                             <>
-                            {(records.map((r,index)=>(
+                            {(records.map((r, index)=>(
                                 <tr>
                                     <td>
                                         {records[index][0]}
